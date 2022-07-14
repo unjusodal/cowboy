@@ -1,0 +1,108 @@
+@import 'components/variables';
+@import 'components/fonts';
+
+* {
+    outline-color: rgb(72, 117, 72);
+}
+
+body {
+    font-family: 'Poppins';
+    color: $text-clr;
+}
+
+a {
+    text-decoration: none;
+    color: $text-clr;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.title {
+    font-family: 'Poppins-Medium';
+}
+
+.wide-wrapper {
+    box-sizing: border-box;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 30px 30px 30px;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.poster {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.094) 100%), $black-clr;
+    color: $text-clr-light;
+    border-radius: 24px;
+}
+
+.model-name {
+    text-transform: uppercase;
+}
+
+.button {
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Poppins-Medium';
+    padding: 10px 20px;
+}
+
+.order-block {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    
+    &__text {
+        .text__price {
+            font-size: 0.9rem;
+            margin: 5px;
+        }
+        
+        .text__under-text {
+            color: $grey-clr;
+            font-size: 0.7rem;
+            margin: 5px;
+            text-align: right;
+        }
+    }
+
+    &__order-btn {
+        width: 150px;
+        background-color: $black-clr;
+        border: 3px solid $black-clr;
+        padding: 8px 20px;
+        color: #FFF;
+        transition: all 120ms ease;
+
+        &:hover {
+            background-color: #FFF;
+            color: $black-clr;
+            border-color: $black-clr;
+        }
+    }
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+@media (max-width: 576px) {
+    .wide-wrapper {
+        padding: 0 10px 10px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .model-name {
+        font-size: 0.9rem;
+    }
+}
