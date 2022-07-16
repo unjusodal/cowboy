@@ -1,0 +1,25 @@
+@import 'variables';
+
+.features {
+    height: 100vh;
+}
+
+.features__swiper {
+    width: 100%;
+
+    .slide-box {
+        width: 300px;
+        text-align: center;
+    }
+
+    .swiper-scrollbar {
+        margin-top: 50px;
+        background-color: $grey-clr;
+    }
+
+    .swiper-scrollbar-drag {
+        height: 1px;
+        background-color: $black-clr;
+        cursor: pointer;
+    }
+}

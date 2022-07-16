@@ -18,6 +18,12 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
-    "sass": "^1.52.3"
+    "sass": "^1.52.3",
+    "webpack": "^5.73.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "fullpage.js": "^4.0.9",
+    "swiper": "^8.3.1"
   }
 }

@@ -1,6 +1,6 @@
-const navMenu = document.querySelector('.nav__menu')
-const burgerBtn = document.querySelector('.nav__burger-menu')
-
-burgerBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('nav__menu--active')
-})
+import sideMenu from "./modules/sideMenu";
+import swiper from './modules/swiper'
+// import fullPageInstance from './modules/fullpage';
+sideMenu()
+swiper()
+// fullPageInstance()

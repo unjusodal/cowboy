@@ -8,6 +8,7 @@ const uglify        = require('gulp-uglify-es').default
 const autoprefixer  = require('gulp-autoprefixer')
 const imagemin      = require('gulp-imagemin')
 const del           = require('del')
+const webpack       = require('webpack-stream')
 
 function styles() {
     return src('src/scss/styles.scss')
@@ -25,8 +26,11 @@ function styles() {
 function scripts() {
     return src('src/js/main.js')
 
+    .pipe(webpack({
+        mode: 'development'
+    }))
     .pipe(uglify())
-    .pipe(concat('index.js'))
+    .pipe(concat('bundle.js'))
     .pipe(dest('src'))
     .pipe(browserSync.stream())
 }
@@ -59,7 +63,8 @@ function liveServer() {
 function watching() {
     watch(['src/scss/**/*.scss'], styles)
     watch('src/index.html').on('change', browserSync.reload)
-    watch(['src/js/main.js'], scripts)
+    watch(['src/js/main.js'], scripts),
+    watch(['src/js/**/*.js'], scripts)
 }
 
 function cleanDist() {
