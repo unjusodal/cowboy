@@ -1,0 +1,54 @@
+@import 'variables';
+
+.ride {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ride__text {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 100px;
+
+    p {
+        width: 50%;
+    }
+}
+
+.ride__img {
+    flex: 1;
+    background-image: url('assets/images/ride.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    color: $text-clr-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    div {
+        width: 300px;
+        padding: 10px;
+        margin: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ride__text {
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-height: 600px) {
+    .ride {
+        height: 600px;
+    }
+}

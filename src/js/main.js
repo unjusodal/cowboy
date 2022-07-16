@@ -1,6 +1,8 @@
-import sideMenu from "./modules/sideMenu";
-import swiper from './modules/swiper'
-// import fullPageInstance from './modules/fullpage';
+import sideMenu from "./modules/sideMenu"
+import slider from './modules/featuresSwiper'
+import accordion from './modules/accordion'
+// import fullPageInstance from './modules/fullpage'
 sideMenu()
-swiper()
+slider()
+accordion()
 // fullPageInstance()

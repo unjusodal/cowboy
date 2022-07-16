@@ -51,3 +51,9 @@
         gap: 0;
     }
 }
+
+@media (max-height: 600px) {
+    .overview {
+        height: 600px;
+    }
+}
