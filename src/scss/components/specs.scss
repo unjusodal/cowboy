@@ -77,6 +77,23 @@
     .block__content {
         table {
             width: 100%;
+            margin-top: 40px;
+
+            td {
+                padding: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .accordion__block {
+        padding: 10px 35px;
+    }
+
+    .block__content {
+        table {
+            font-size: 0.8rem;
         }
     }
 }

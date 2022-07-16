@@ -9,6 +9,14 @@ const autoprefixer  = require('gulp-autoprefixer')
 const imagemin      = require('gulp-imagemin')
 const del           = require('del')
 const webpack       = require('webpack-stream')
+const htmlmin       = require('gulp-htmlmin')
+
+function html() {
+    return src('src/index.html')
+
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest('dist'))
+}
 
 function styles() {
     return src('src/scss/styles.scss')
@@ -27,7 +35,7 @@ function scripts() {
     return src('src/js/main.js')
 
     .pipe(webpack({
-        mode: 'development'
+        mode: 'production'
     }))
     .pipe(uglify())
     .pipe(concat('bundle.js'))
@@ -36,7 +44,7 @@ function scripts() {
 }
 
 function compressImgs() {
-    return src('src/assets/images/**/*.*')
+    return src(['src/assets/images/**/*.*', '!src/assets/images/bike.svg'])
 
     .pipe(imagemin([
         imagemin.gifsicle({interlaced: true}),
@@ -73,9 +81,8 @@ function cleanDist() {
 
 function build() {
     return src([
-        'src/index.html',
-        'src/style.min.css',
-        'src/index.js'
+        'src/styles.min.css',
+        'src/bundle.js'
     ], {base: 'src'})
 
     .pipe(dest('dist'))
@@ -87,4 +94,4 @@ exports.compressImgs = compressImgs
 
 exports.default = parallel(watching, liveServer)
 
-exports.build = series(cleanDist,compressImgs, build)
+exports.build = series(cleanDist, compressImgs, scripts, styles, html, build)

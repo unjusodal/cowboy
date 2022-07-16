@@ -47,6 +47,25 @@
     }
 }
 
+@media (max-width: 500px) {
+    .ride {
+        text-align: center;
+        font-size: 0.9rem;
+
+        &__text {
+            gap: 0;
+        }
+
+        &__img {
+            div {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
 @media (max-height: 600px) {
     .ride {
         height: 600px;

@@ -12,6 +12,7 @@ function slider() {
         grabCursor: true,
     
         breakpoints: {
+
             600: {
                 slidesPerView: 1
             },
